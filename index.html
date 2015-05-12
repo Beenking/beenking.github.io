@@ -64,7 +64,7 @@
       <li class="menu-item menu-item-home">
         <a href="/">
           <i class="menu-item-icon icon-home"></i> <br />
-          Home
+          首页
         </a>
       </li>
     
@@ -72,15 +72,7 @@
       <li class="menu-item menu-item-categories">
         <a href="/categories">
           <i class="menu-item-icon icon-categories"></i> <br />
-          Categories
-        </a>
-      </li>
-    
-      
-      <li class="menu-item menu-item-about">
-        <a href="/about">
-          <i class="menu-item-icon icon-about"></i> <br />
-          About
+          分类
         </a>
       </li>
     
@@ -88,7 +80,7 @@
       <li class="menu-item menu-item-archives">
         <a href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
-          Archives
+          归档
         </a>
       </li>
     
@@ -96,7 +88,15 @@
       <li class="menu-item menu-item-tags">
         <a href="/tags">
           <i class="menu-item-icon icon-tags"></i> <br />
-          Tags
+          标签
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-about">
+        <a href="/about">
+          <i class="menu-item-icon icon-about"></i> <br />
+          关于
         </a>
       </li>
     
@@ -124,7 +124,7 @@
           
             
               <a class="post-title-link" href="/2015/05/12/hello-world/">
-                Hello World
+                Hello Hexo
               </a>
             
           
@@ -133,12 +133,19 @@
 
       <div class="post-meta">
         <span class="post-time">
-          Posted on 2015-05-12
+          发表于 2015-05-12
         </span>
 
         
 
         
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/05/12/hello-world/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/12/hello-world/"></span>
+            </a>
+          </span>
           
         
       </div>
@@ -214,21 +221,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">categories</span>
+              <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">tags</span>
+              <span class="site-state-item-name">标签</span>
               </a>
           </div>
 
@@ -237,6 +244,28 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/beenking" target="_blank">GitHub</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="your-twitter-url" target="_blank">Twitter</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="your-weibo-url" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="your-douban-url" target="_blank">DouBan</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="your-zhihu-url" target="_blank">ZhiHu</a>
+            </span>
+            
           
         </div>
 
@@ -266,11 +295,11 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
@@ -478,14 +507,31 @@
   
 
   
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
   
   
-
-  
-
-
 
 
   

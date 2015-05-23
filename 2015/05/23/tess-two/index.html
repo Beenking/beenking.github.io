@@ -32,7 +32,7 @@
 
 
 
-  <title> Hello Hexo // been's Blog </title>
+  <title>  // been's Blog </title>
 </head>
 
 <body>
@@ -121,7 +121,7 @@
           
           
             
-              Hello Hexo
+              
             
           
         </h1>
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            发表于 2015-05-12
+            发表于 2015-05-23
           
         </span>
 
@@ -142,8 +142,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/05/12/hello-world/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/12/hello-world/"></span>
+            <a href="/2015/05/23/tess-two/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/23/tess-two/"></span>
             </a>
           </span>
           
@@ -158,16 +158,49 @@
         
 
         
-          <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+          <h1 id="tess-two">tess-two</h1><p>A fork of Tesseract Tools for Android (<a href="https://code.google.com/p/tesseract-android-tools/" target="_blank" rel="external">tesseract-android-tools</a>) that adds some<br>additional functions. Tesseract Tools for Android is a set of Android APIs and<br>build files for the <a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">Tesseract OCR</a> and <a href="http://www.leptonica.com/" target="_blank" rel="external">Leptonica</a> image processing libraries.</p>
+<p>This project works with Tesseract pre-release v3.04 and Leptonica v1.72. The required source code for Tesseract and<br>Leptonica is included within the <code>tess-two/jni</code> folder.</p>
+<p>The <code>tess-two</code> subdirectory contains tools for compiling the Tesseract and Leptonica<br>libraries for use on the Android platform. It contains an Android <a href="https://developer.android.com/tools/projects/projects-eclipse.html#ReferencingLibraryProject" target="_blank" rel="external">library project</a><br>that provides a Java API for accessing natively-compiled Tesseract and Leptonica APIs.</p>
+<p>The <code>eyes-two</code> subdirectory contains a second, separate library project with additional image<br>processing code copied from the <a href="https://code.google.com/p/eyes-free/" target="_blank" rel="external">eyes-free project</a>. It includes native functions for text detection, blur detection, optical flow<br>detection, and thresholding. Building eyes-two is not necessary for using the Tesseract or Leptonica APIs.</p>
+<p>The <code>tess-two-test</code> subdirectory contains Android JUnit tests.</p>
+<h2 id="Requirements">Requirements</h2><ul>
+<li>Android 2.2 or higher</li>
+<li>A v3.02 <a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="external">trained data file</a> for a language. Data files must be extracted to a subdirectory named <code>tessdata</code>.</li>
+</ul>
+<h2 id="Versions">Versions</h2><p>Release points are tagged with <a href="http://semver.org" target="_blank" rel="external">version numbers</a>. A change to the major version number<br>indicates an API change making that version incompatible with previous versions.</p>
+<h2 id="Building">Building</h2><p>This project is set up to build on Android SDK Tools r22.3+ and Android NDK r10d+. The build<br>works on Linux, Mac OS X, and Windows 7/8. See <a href="https://github.com/rmtheis/tess-two/issues" target="_blank" rel="external">Issues</a> for reported build issues.</p>
+<p>On 64-bit Ubuntu, you may need to install the <code>ia32-libs</code> 32-bit compatibility library.</p>
+<p>To build the latest tess-two code, run the following commands in the terminal:</p>
+<pre><code>git clone git:<span class="comment">//github.com/rmtheis/tess-two tess</span>
+<span class="keyword">cd</span> tess
+<span class="keyword">cd</span> tess-<span class="keyword">two</span>
+ndk-build
+android <span class="keyword">update</span> project --path .
+ant release
+</code></pre><p>To build eyes-two, additionally run the following:</p>
+<pre><code><span class="keyword">cd</span> ..
+<span class="keyword">cd</span> eyes-<span class="keyword">two</span>
+ndk-build
+android <span class="keyword">update</span> project --path .
+ant release
+</code></pre><p>After building, the tess-two and eyes-two projects can be imported into Eclipse using<br>File-&gt;Import-&gt;Existing Projects into Workspace.</p>
+<h2 id="Maven">Maven</h2><p>While this project does not require Maven (and this project has not yet been registered in a<br>Maven central repository), it can be <a href="http://www.jameselsey.co.uk/blogs/techblog/tesseract-ocr-on-android-is-easier-if-you-maven-ise-it-works-on-windows-too/" target="_blank" rel="external">integrated into a local Maven repository for convenience</a>.</p>
+<h2 id="Questions">Questions</h2><p>If you have a question, consider posting it to <a href="https://stackoverflow.com/" target="_blank" rel="external">StackOverflow</a> and tagging it with the<br><code>tess-two</code> tag. For best results, follow their suggestions for <a href="https://stackoverflow.com/help/how-to-ask" target="_blank" rel="external">asking a good question</a>.</p>
+<h2 id="Contributing">Contributing</h2><p>Pull requests are always welcome. Please open a new issue if you find a bug.</p>
+<h2 id="License">License</h2><pre><code>Copyright 2011 Robert Theis
 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not <span class="operator"><span class="keyword">use</span> this file <span class="keyword">except</span> <span class="keyword">in</span> compliance <span class="keyword">with</span> the License.
+You may obtain a copy <span class="keyword">of</span> the License <span class="keyword">at</span>
+
+    http://www.apache.org/licenses/LICENSE-<span class="number">2.0</span>
+
+Unless required <span class="keyword">by</span> applicable law <span class="keyword">or</span> agreed <span class="keyword">to</span> <span class="keyword">in</span> writing, software
+distributed under the License <span class="keyword">is</span> distributed <span class="keyword">on</span> an <span class="string">"AS IS"</span> BASIS,
+WITHOUT WARRANTIES <span class="keyword">OR</span> CONDITIONS <span class="keyword">OF</span> <span class="keyword">ANY</span> KIND, either express <span class="keyword">or</span> implied.
+See the License <span class="keyword">for</span> the specific <span class="keyword">language</span> governing permissions <span class="keyword">and</span>
+limitations under the License.</span>
+</code></pre>
         
       </div>
     
@@ -180,11 +213,11 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2015/05/23/tess-two/"></a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/05/12/hello-world/">Hello Hexo</a>
               
             </div>
           </div>
@@ -201,8 +234,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2015/05/12/hello-world/"
-             data-title="Hello Hexo" data-url="http://yoursite.com/2015/05/12/hello-world/">
+        <div class="ds-thread" data-thread-key="2015/05/23/tess-two/"
+             data-title="" data-url="http://yoursite.com/2015/05/23/tess-two/">
         </div>
 
       
@@ -293,7 +326,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tess-two"><span class="nav-number">1.</span> <span class="nav-text">tess-two</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements"><span class="nav-number">1.1.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Versions"><span class="nav-number">1.2.</span> <span class="nav-text">Versions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Building"><span class="nav-number">1.3.</span> <span class="nav-text">Building</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven"><span class="nav-number">1.4.</span> <span class="nav-text">Maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">1.5.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contributing"><span class="nav-number">1.6.</span> <span class="nav-text">Contributing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">1.7.</span> <span class="nav-text">License</span></a></li></ol></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
